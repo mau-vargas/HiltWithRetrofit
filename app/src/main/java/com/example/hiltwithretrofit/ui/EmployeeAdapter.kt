@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hiltwithretrofit.databinding.EmployeeItemBinding
 import com.example.hiltwithretrofit.others.ResultPokemon
+import javax.inject.Inject
 
-class EmployeeAdapter: RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>(){
-
-
+class EmployeeAdapter @Inject constructor(): RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>(){
 
     private val diffCallback = object : DiffUtil.ItemCallback<ResultPokemon>(){
         override fun areItemsTheSame(oldItem: ResultPokemon, newItem: ResultPokemon): Boolean {

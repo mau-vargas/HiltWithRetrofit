@@ -4,6 +4,7 @@ import com.example.hiltwithretrofit.BuildConfig
 import com.example.hiltwithretrofit.api.ApiHelper
 import com.example.hiltwithretrofit.api.ApiHelperImpl
 import com.example.hiltwithretrofit.api.ApiService
+import com.example.hiltwithretrofit.component.AppComponent
 import com.example.hiltwithretrofit.others.Constants
 import dagger.Module
 import dagger.Provides
@@ -18,6 +19,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+    internal var component: AppComponent? = null
+
     @Provides
     fun provideBaseUrl() = Constants.BASE_URL_POKEMON
 
@@ -50,6 +53,8 @@ object AppModule {
     @Provides
     @Singleton
     fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper = apiHelper
+
+
 }
 
 /*

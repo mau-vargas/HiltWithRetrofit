@@ -3,6 +3,7 @@ package com.example.hiltwithretrofit.di
 import com.example.hiltwithretrofit.api.ApiService
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
@@ -11,10 +12,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 
-/*
-@Module
+@EntryPoint
 @InstallIn(SingletonComponent::class)
-object  RetrofitModule {
+interface  RetrofitModule {
     @Singleton
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient, BASE_URL:String): Retrofit = Retrofit.Builder()
@@ -26,4 +26,4 @@ object  RetrofitModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
-}*/
+}
